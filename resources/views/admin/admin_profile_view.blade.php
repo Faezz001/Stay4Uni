@@ -43,7 +43,7 @@
 
                         <div class="mb-3">
                             <label for="exampleInputUsername1" class="form-label">Name</label>
-                            <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name}}">
+                            <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name}}">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Photo</label>

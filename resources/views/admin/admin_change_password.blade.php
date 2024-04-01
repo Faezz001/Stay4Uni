@@ -4,7 +4,6 @@
 
 <div class="page-content">
 
-
         <div class="row profile-body">
           <!-- left wrapper start -->
           <div class="d-none d-md-block col-md-4 col-xl-4 left-wrapper">
@@ -12,13 +11,10 @@
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-2">
 
-
                   <div>
   <img class="wd-100 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" alt="profile">
                     <span class="h4 ms-3 ">{{ $profileData->username }}</span>
                   </div>
-
-
 
                 </div>
 
@@ -30,6 +26,7 @@
                   <label class="tx-11 fw-bolder mb-0 text-uppercase">Email:</label>
                   <p class="text-muted">{{ $profileData->email }}</p>
                 </div>
+
               </div>
             </div>
           </div>
@@ -42,7 +39,7 @@
 
 			<h6 class="card-title">Admin Change Password  </h6>
 
-			<form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
+			<form method="POST" action="{{ route('admin.update.password') }}" class="forms-sample" enctype="multipart/form-data">
 				@csrf
 
 
@@ -53,7 +50,6 @@
            <span class="text-danger">{{ $message }}</span>
            @enderror
 				</div>
-
 				  <div class="mb-3">
  <label for="exampleInputEmail1" class="form-label">New Password  </label>
            <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror " id="new_password" autocomplete="off" >
@@ -68,17 +64,11 @@
 
         </div>
 
-
 	 <button type="submit" class="btn btn-primary me-2">Save Changes </button>
 
 			</form>
-
               </div>
             </div>
-
-
-
-
             </div>
           </div>
           <!-- middle wrapper end -->
@@ -86,9 +76,6 @@
 
           <!-- right wrapper end -->
         </div>
-
 			</div>
-
-
 
 @endsection

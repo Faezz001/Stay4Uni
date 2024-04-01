@@ -41,6 +41,8 @@
 
   <!-- Layout styles -->
 	<link rel="stylesheet" href="../../../backend/assets/css/demo2/style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
   <!-- End layout styles -->
 
   <link rel="shortcut icon" href="../../../backend/assets/images/favicon.png" />
@@ -62,17 +64,23 @@
                 <div class="col-md-8 ps-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
                     <a href="#" class="noble-ui-logo logo-light d-block mb-2">Stay4<span>Uni</span></a>
-                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
+                    <h5 class="text-muted fw-normal mb-4">Welcome! Please sign in.</h5>
                     <form class="forms-sample" method="POST" action="{{ route('login') }}">
                         @csrf
                       <div class="mb-3">
-                        <label for="login" class="form-label">Email/Phone</label>
-                        <input type="text" class="form-control" name="login" id="login" placeholder="Email">
+                        <label for="login" class="form-label">Email/Username</label>
+                        <input type="login" class="form-control" name="login" id="login" placeholder="Email/Username">
+                    @error('login')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                       </div>
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" name="password" id="password" autocomplete="current-password" placeholder="Password">
                       </div>
+                    @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                       <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="authCheck">
                         <label class="form-check-label" for="authCheck">
@@ -110,6 +118,26 @@
 	<!-- endinject -->
 
 	<!-- Custom js for this page -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+           case 'info':
+           toastr.info(" {{ Session::get('message') }} ");
+           break;
+           case 'success':
+           toastr.success(" {{ Session::get('message') }} ");
+           break;
+           case 'warning':
+           toastr.warning(" {{ Session::get('message') }} ");
+           break;
+           case 'error':
+           toastr.error(" {{ Session::get('message') }} ");
+           break;
+        }
+        @endif
 	<!-- End custom js for this page -->
 
 </body>
