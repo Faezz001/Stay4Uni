@@ -181,10 +181,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+        Ladumor\LaravelPwa\PWAServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
+       // Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -209,7 +212,10 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Share' => Jorenvh\Share\ShareFacade::class,
+        'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        //'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];

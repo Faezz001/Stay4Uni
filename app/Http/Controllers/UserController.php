@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 
 class UserController extends Controller
 {
@@ -47,6 +49,25 @@ class UserController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function UserRegister(Request $request){
+
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'role' => 'user',
+        ]);
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
+
+    }
+
     public function UserLogout(Request $request)
     {
         Auth::guard('web')->logout();
@@ -55,7 +76,11 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        $notification = array(
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect('/login')->with($notification);
     }
 
     public function UserChangePassword()

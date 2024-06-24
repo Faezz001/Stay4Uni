@@ -114,7 +114,7 @@ class PropertyTypeController extends Controller
 
     public function EditAmenities($id){
 
-        $types = Amenities::findorfail($id);
+        $amenities = Amenities::findorfail($id);
         return view('backend.amenities.edit_amenities', compact('amenities'));
     }
 

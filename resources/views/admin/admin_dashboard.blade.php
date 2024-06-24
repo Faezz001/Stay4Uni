@@ -7,7 +7,7 @@
     <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
     <meta name="author" content="NobleUI">
     <meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-    <title>Admin Panel - Real Estate </title>
+    <title>Admin Panel</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/easymde/easymde.min.css') }}">
 
 
     <!-- inject:css -->
@@ -34,6 +35,7 @@
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
 
 </head>
 
@@ -59,6 +61,7 @@
     <!-- Plugin js for this page -->
     <script src="{{ asset('backend/assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('backend/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/vendors/easymde/easymde.min.js') }}"></script>
 
     <!-- inject:js -->
     <script src="{{ asset('backend/assets/vendors/feather-icons/feather.min.js') }}"></script>
@@ -77,6 +80,8 @@
     <script src="{{ asset('backend/assets/js/code.js') }}"></script>
 
     <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
+
+    <script src="{{ asset('backend/assets/js/easymde.js') }}"></script>
 
       <!-- Input Tags -->
   <script src="{{ asset('backend/assets/vendors/inputmask/jquery.inputmask.min.js') }}"></script>
@@ -117,6 +122,10 @@
  @endif
 
 </script>
+
+
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 
 </body>
 </html>

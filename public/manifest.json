@@ -1,0 +1,17 @@
+{
+    "name": "Stay4Uni",
+    "short_name": "S4U",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Off-campus Accommodation Platform",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "logo.PNG",
+            "sizes": "500x500",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

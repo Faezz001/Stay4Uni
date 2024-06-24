@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('ptype_id');
             $table->string('amenities_id');
             $table->string('property_name');
-            $table->string('property_sluq');
+            $table->string('property_slug');
+            $table->string('property_code');
             $table->string('property_status');
             $table->string('rental_price')->nullable();
             $table->string('property_thumbnail');
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
+            $table->integer('zip')->nullable();
             $table->integer('agent_id')->nullable();
             $table->string('status')->default(0);
             $table->timestamps();

@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
       <a href="#" class="sidebar-brand">
-        Stay4<span>Uni</span>
+        Admin<span>Panel</span>
       </a>
       <div class="sidebar-toggler not-active">
         <span></span>
@@ -18,11 +18,11 @@
             <span class="link-title">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item nav-category">realEstate</li>
+        <li class="nav-item nav-category">Accommodation</li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
             <i class="link-icon" data-feather="home"></i>
-            <span class="link-title">Property</span>
+            <span class="link-title">Accommodation</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="emails">
@@ -41,124 +41,52 @@
           </div>
         </li>
 
-        <li class="nav-item">
-          <a href="pages/apps/calendar.html" class="nav-link">
-            <i class="link-icon" data-feather="calendar"></i>
-            <span class="link-title">Calendar</span>
-          </a>
-        </li>
-        <li class="nav-item nav-category">Components</li>
+        <li class="nav-item nav-category">User</li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
-            <i class="link-icon" data-feather="feather"></i>
-            <span class="link-title">UI Kit</span>
+            <i class="link-icon" data-feather="user"></i>
+            <span class="link-title">Manage agent</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="uiComponents">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="pages/ui-components/accordion.html" class="nav-link">Accordion</a>
+                <a href="{{ route('all.agent') }}" class="nav-link">All agent</a>
               </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/alerts.html" class="nav-link">Alerts</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/badges.html" class="nav-link">Badges</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/breadcrumbs.html" class="nav-link">Breadcrumbs</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/buttons.html" class="nav-link">Buttons</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/button-group.html" class="nav-link">Button group</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/cards.html" class="nav-link">Cards</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/carousel.html" class="nav-link">Carousel</a>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/ui-components/collapse.html" class="nav-link">Collapse</a>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
+              <i class="link-icon" data-feather="user"></i>
+              <span class="link-title">Manage user</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="uiComponents">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{ route('all.user') }}" class="nav-link">All user</a>
                 </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/dropdowns.html" class="nav-link">Dropdowns</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/list-group.html" class="nav-link">List group</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/media-object.html" class="nav-link">Media object</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/modal.html" class="nav-link">Modal</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/navs.html" class="nav-link">Navs</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/navbar.html" class="nav-link">Navbar</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/pagination.html" class="nav-link">Pagination</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/popover.html" class="nav-link">Popovers</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/progress.html" class="nav-link">Progress</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/scrollbar.html" class="nav-link">Scrollbar</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/scrollspy.html" class="nav-link">Scrollspy</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/spinners.html" class="nav-link">Spinners</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/tabs.html" class="nav-link">Tabs</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/ui-components/tooltips.html" class="nav-link">Tooltips</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false" aria-controls="advancedUI">
-            <i class="link-icon" data-feather="anchor"></i>
-            <span class="link-title">Advanced UI</span>
-            <i class="link-arrow" data-feather="chevron-down"></i>
-          </a>
-          <div class="collapse" id="advancedUI">
-            <ul class="nav sub-menu">
-              <li class="nav-item">
-                <a href="pages/advanced-ui/cropper.html" class="nav-link">Cropper</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/advanced-ui/owl-carousel.html" class="nav-link">Owl carousel</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/advanced-ui/sortablejs.html" class="nav-link">SortableJs</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/advanced-ui/sweet-alert.html" class="nav-link">Sweet Alert</a>
-              </li>
-            </ul>
-          </div>
-        </li>
+              </ul>
+            </div>
+          </li>
 
-        <li class="nav-item nav-category">Docs</li>
-        <li class="nav-item">
-          <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
-            <i class="link-icon" data-feather="hash"></i>
-            <span class="link-title">Documentation</span>
-          </a>
-        </li>
+          <li class="nav-item nav-category">Complaint Management</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
+              <i class="link-icon" data-feather="user"></i>
+              <span class="link-title">User complaint</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="uiComponents">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{ route('admin.property.complaint') }}" class="nav-link">All Complaint</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
       </ul>
     </div>
   </nav>
