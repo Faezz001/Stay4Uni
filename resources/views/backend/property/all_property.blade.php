@@ -21,35 +21,36 @@
                     <thead>
                       <tr>
                         <th>No </th>
-                        <th>Image </th>
-                        <th>Name </th>
+                        <th>Property Name </th>
                         <th>Property Type </th>
                         <th>Status Type </th>
-                        <th>City </th>
-                        <th>Status </th>
-                        <th>Action </th>
+                        <th>Rental Price </th>
+                        <th>Agent </th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zipcode</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                    @foreach($property as $key => $item)
                       <tr>
                         <td>{{ $key+1 }}</td>
-                        <td><img src="{{ asset($item->property_thambnail) }}" style="width:70px; height:40px;"> </td>
                         <td>{{ $item->property_name }}</td>
-                        <td>{{ $item->ptype_id }}</td>
+                        <td>{{ $item['type']['type_name'] }}</td>
                         <td>{{ $item->property_status }}</td>
+                        <td>{{ $item->rental_price }}</td>
+                        <td>{{ $item->agent_id }}</td>
+                        <td>{{ $item->address }}</td>
                         <td>{{ $item->city }}</td>
-                        <td>
-                      @if($item->status == 1)
-                <span class="badge rounded-pill bg-success">Active</span>
-                      @else
-               <span class="badge rounded-pill bg-danger">InActive</span>
-                      @endif
+                        <td>{{ $item->state }}</td>
+                        <td>{{ $item->zip }}</td>
 
-                        </td>
                         <td>
-       <a href="{{ route('edit.amenitie',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
-       <a href="{{ route('delete.amenitie',$item->id) }}" class="btn btn-inverse-danger" id="delete"> Delete  </a>
+        <a href="{{ route('details.property',$item->id) }}" class="btn btn-inverse-info" title="Details"> <i data-feather="eye"></i> </a>
+       <a href="{{ route('edit.property',$item->id) }}" class="btn btn-inverse-warning" title="Edit"> <i data-feather="edit"></i> </a>
+       <a href="{{ route('delete.property',$item->id) }}" class="btn btn-inverse-danger" id="delete" title="Delete"> <i data-feather="trash-2"></i> </a>
                         </td>
                       </tr>
                      @endforeach
@@ -62,7 +63,6 @@
 				</div>
 
 			</div>
-
 
 
 

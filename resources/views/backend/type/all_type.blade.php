@@ -31,8 +31,8 @@
             <td>{{ $item->type_name }}</td>
             <td>{{ $item->type_icon }}</td>
             <td>
-            <a href="{{ route('edit.type',$item->id) }}" class="btn btn-warning"> Edit </a>
-            <a href="{{ route('delete.type',$item->id) }}" class="btn btn-danger" id="delete"> Delete </a>
+            <a href="{{ route('edit.type',$item->id) }}" class="btn btn-inverse-warning" title="Edit"> <i data-feather="edit"></i> </a>
+            <a href="{{ route('delete.type',$item->id) }}" class="btn btn-inverse-danger" id="delete" title="Delete"> <i data-feather="trash-2"></i> </a>
             </td>
           </tr>
             @endforeach

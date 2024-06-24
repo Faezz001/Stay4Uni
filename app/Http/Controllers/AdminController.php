@@ -21,7 +21,12 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        $notification = array(
+            'message' => 'Admin Logout Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/admin/login')->with($notification);
     }
 
     public function AdminLogin()
@@ -121,6 +126,113 @@ class AdminController extends Controller
         return back()->with($notification);
 
      }// End Method
+
+     public function AllAgent(){
+
+        $allagent = User::where('role','agent')->get();
+        return view('backend.agentuser.all_agent',compact('allagent'));
+
+      }
+      public function EditAgent($id){
+
+        $allagent = User::findOrFail($id);
+        return view('backend.agentuser.edit_agent',compact('allagent'));
+
+      }// End Method
+
+
+      public function UpdateAgent(Request $request){
+
+        $user_id = $request->id;
+
+        User::findOrFail($user_id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+        ]);
+
+
+           $notification = array(
+                'message' => 'Agent Updated Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.agent')->with($notification);
+
+      }// End Method
+
+
+      public function DeleteAgent($id){
+
+        User::findOrFail($id)->delete();
+
+         $notification = array(
+                'message' => 'Agent Deleted Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+
+      }
+      public function changeStatus(Request $request){
+
+        $user = User::find($request->user_id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status Change Successfully']);
+
+      }
+
+      public function AllUser(){
+
+        $alluser = User::where('role','user')->get();
+        return view('backend.user.all_user',compact('alluser'));
+
+      }
+      public function EditUser($id){
+
+        $alluser = User::findOrFail($id);
+        return view('backend.user.edit_user',compact('alluser'));
+
+      }// End Method
+
+
+      public function UpdateUser(Request $request){
+
+        $user_id = $request->id;
+
+        User::findOrFail($user_id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+        ]);
+
+
+           $notification = array(
+                'message' => 'User Updated Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.user')->with($notification);
+
+      }// End Method
+
+
+      public function DeleteUser($id){
+
+        User::findOrFail($id)->delete();
+
+         $notification = array(
+                'message' => 'User Deleted Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+
+      }
 
 }
 

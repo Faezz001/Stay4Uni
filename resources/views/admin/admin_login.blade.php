@@ -28,24 +28,26 @@
   <!-- End fonts -->
 
 	<!-- core:css -->
-	<link rel="stylesheet" href="../../../backend/assets/vendors/core/core.css">
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/core/core.css') }}">
 	<!-- endinject -->
 
 	<!-- Plugin css for this page -->
 	<!-- End plugin css for this page -->
 
 	<!-- inject:css -->
-	<link rel="stylesheet" href="../../../backend/assets/fonts/feather-font/css/iconfont.css">
-	<link rel="stylesheet" href="../../../backend/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="{{ asset('backend/assets/fonts/feather-font/css/iconfont.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
 	<!-- endinject -->
 
   <!-- Layout styles -->
-	<link rel="stylesheet" href="../../../backend/assets/css/demo2/style.css">
+	<link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
   <!-- End layout styles -->
 
-  <link rel="shortcut icon" href="../../../backend/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css') }}" >
 </head>
 <body>
 	<div class="main-wrapper">
@@ -71,7 +73,7 @@
                         <label for="login" class="form-label">Email/Username</label>
                         <input type="login" class="form-control" name="login" id="login" placeholder="Email/Username">
                     @error('login')
-                    <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger">You enter incorrect email</span>
                     @enderror
                       </div>
                       <div class="mb-3">
@@ -79,20 +81,13 @@
                         <input type="password" class="form-control" name="password" id="password" autocomplete="current-password" placeholder="Password">
                       </div>
                     @error('password')
-                    <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger">You enter incorrect password</span>
                   @enderror
-                      <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="authCheck">
-                        <label class="form-check-label" for="authCheck">
-                          Remember me
-                        </label>
-                      </div>
                       <div>
                         <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                             Login
                         </button>
                       </div>
-                      <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>
                     </form>
                   </div>
                 </div>
@@ -106,15 +101,15 @@
 	</div>
 
 	<!-- core:js -->
-	<script src="../../../backend/assets/vendors/core/core.js"></script>
+	<script src="{{ asset('backend/assets/vendors/core/core.js') }}"></script>
 	<!-- endinject -->
 
 	<!-- Plugin js for this page -->
 	<!-- End plugin js for this page -->
 
 	<!-- inject:js -->
-	<script src="../../../backend/assets/vendors/feather-icons/feather.min.js"></script>
-	<script src="../../../backend/assets/js/template.js"></script>
+	<script src="{{ asset('backend/assets/vendors/feather-icons/feather.min.js')}}"></script>
+	<script src="{{ asset('backend/assets/js/template.js') }}"></script>
 	<!-- endinject -->
 
 	<!-- Custom js for this page -->
@@ -139,6 +134,7 @@
         }
         @endif
 	<!-- End custom js for this page -->
+    </script>
 
 </body>
 </html>
